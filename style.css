@@ -27,6 +27,26 @@ body {
     justify-content: space-between;
     width: 100%;
 }
+@media screen and (max-width: 600px) {
+    .Navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .atas {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .content.visible {
+        margin: 0; /* Hilangkan margin */
+        max-width: 100%; /* Atur lebar maksimum 100% agar tetap responsif */
+        padding: 0 20px; /* Tambahkan padding jika diperlukan */
+        box-sizing: border-box; /* Pastikan padding termasuk dalam lebar maksimum */
+    }
+}
+
 
 .left, .right {
     display: flex;
@@ -37,10 +57,6 @@ body {
 
 .left li {
     margin-right: 20px;
-}
-
-.right {
-    justify-content: flex-end;
 }
 
 .right li {
@@ -91,8 +107,6 @@ body {
 }
 
 
-
-
 /* Adjust the positioning of the social buttons for different screen sizes */
 @media (max-width: 768px) {
     .social-buttons {
@@ -133,10 +147,6 @@ body {
     .navbar-title, .navbar-link {
         font-size: 24px;
     }
-
-    .left li, .right li {
-        margin: 0 10px;
-    }
 }
 
 /* Media query for mobile devices */
@@ -152,6 +162,7 @@ body {
 
     .left li, .right li {
         margin: 0 5px;
+        flex-direction: column;
     }
 }
 
@@ -194,24 +205,14 @@ body {
 }
 
 /* Responsive text adjustments */
-@media (max-width: 768px) {
-    .student-text {
-        font-size: 20px;
-    }
-
-    .intro-text {
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 480px) {
+@media screen and (max-width: 600px) {
     .student-text {
         font-size: 18px;
     }
 
     .intro-text {
         font-size: 24px;
-    }
+        margin-top: 200px; }
 }
 
 .image-container {
@@ -343,6 +344,24 @@ body {
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 200px){
+    .custom-about-text {
+        font-size: 24px;
+    }
+    .custom-description-text {
+        font-size: 18px;
+    }
+    .custom-container{
+    flex-direction: "column";
+    align-items: "center";}
+    .custom-skills-text {
+        font-size: 24px;
+    }
+    .custom-description-text {
+        font-size: 18px;
+    }
+}
+
 .custom-description-text {
     font-size: 24px;
     font-weight: 700;
@@ -450,13 +469,15 @@ body {
 /* Responsive grid adjustments */
 @media (max-width: 768px) {
     .images {
-        grid-template-columns: repeat(2, 1fr); /* Dua kolom dengan lebar yang sama */
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center; /* Dua kolom dengan lebar yang sama */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
     .images {
         grid-template-columns: 1fr; /* Satu kolom dengan lebar penuh */
+        align-items: center;
     }
 }
 
