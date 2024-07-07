@@ -1,0 +1,472 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #7743DB 0%, #402475 79.5%);
+    margin: 0;
+    padding: 0;
+}
+
+.atas {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 0px 0px 15px 15px;
+    background: linear-gradient(90deg, #7743DB 0%, #402475 76%);
+    box-shadow: 0px 4px 8.4px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left, .right {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left li {
+    margin-right: 20px;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.right li {
+    margin-left: 20px;
+}
+
+.navbar-title, .navbar-link {
+    display: block;
+    color: #FFFBF5;
+    font-size: 32px;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.navbar-title:hover, .navbar-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* CSS untuk tombol sosial */
+/* CSS untuk ikon sosial di navbar */
+.social-icon {
+    width: 50px; /* Sesuaikan ukuran ikon sesuai kebutuhan */
+    height: auto;
+    margin-right: 10px; /* Jarak antara ikon */
+    transition: transform 0.3s ease; /* Animasi transform dengan durasi 0.3 detik */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Scale ikon menjadi 1.2 kali ukuran aslinya saat dihover */
+}
+
+
+
+.content {
+    width: 80%;
+    max-width: 1200px;
+    position: relative;
+    margin: 100px auto;
+    text-align: center;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    align-items: center;
+    align-content: center;
+}
+
+
+
+
+/* Adjust the positioning of the social buttons for different screen sizes */
+@media (max-width: 768px) {
+    .social-buttons {
+        top: -30px;
+    }
+
+    .social-button img {
+        width: 30px; /* Adjust based on your design */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-buttons {
+        top: -20px;
+    }
+
+    .social-button img {
+        width: 25px; /* Adjust based on your design */
+    }
+}
+
+
+/* Media query for tablets and below */
+@media (max-width: 1024px) {
+    .content {
+        width: 90%;
+        margin: 80px auto;
+    }
+}
+
+/* Media query for small tablets and below */
+@media (max-width: 768px) {
+    .content {
+        width: 95%;
+        margin: 60px auto;
+    }
+
+    .navbar-title, .navbar-link {
+        font-size: 24px;
+    }
+
+    .left li, .right li {
+        margin: 0 10px;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .content {
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    .navbar-title, .navbar-link {
+        font-size: 20px;
+    }
+
+    .left li, .right li {
+        margin: 0 5px;
+    }
+}
+
+.content.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Add a class for elements to be scaled in */
+.scale-in {
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Add a class for the scaled-in state */
+.scale-in.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.text-container {
+    color: #FFFBF5;
+    margin-bottom: 50px;
+}
+
+.student-text {
+    color: #FFFBF5;
+    font-size: 24px;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+}
+
+.intro-text {
+    color: #FFFBF5;
+    font-size: 36px;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Responsive text adjustments */
+@media (max-width: 768px) {
+    .student-text {
+        font-size: 20px;
+    }
+
+    .intro-text {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .student-text {
+        font-size: 18px;
+    }
+
+    .intro-text {
+        font-size: 24px;
+    }
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    display: block;
+    margin: 33px auto 0;
+    box-shadow: 0px 1px 5.5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    z-index: 1; /* Ensure profile image is above blur box */
+    position: relative;
+}
+
+.blur-box {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #C3ACD0;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    filter: blur(10px);
+    z-index: 0; /* Ensure blur box is behind profile image */
+}
+
+.cv-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    margin-top: 50px;
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+}
+
+.cv-button {
+    height: 77px;
+    padding: 24px 97px;
+    background: #FFFBF5;
+    border: none;
+    border-radius: 20px;
+    font-size: 24px;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+    animation: pulse 1s infinite;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cv-button:hover {
+    background: #E6E6E6;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #333;
+}
+
+.custom-container {
+    width: 100%;
+    max-width: 1118px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 150px auto 0;
+    padding: 11px 21px;
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+}
+
+.custom-image-container {
+    position: relative;
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.custom-profile-image {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 1px 5.5px rgba(0, 0, 0, 0.25);
+}
+
+.custom-blur-box {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #C3ACD0;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.custom-text-container {
+    flex: 2;
+    color: #FFFBF5;
+    font-family: Lato, sans-serif;
+}
+
+.custom-about-text {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.custom-description-text {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.custom-skills-text {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.custom-skills-text {
+    background-image: linear-gradient(
+        -225deg,
+        #231557 0%,
+        #44107a 29%,
+        #F7EFE5 67%,
+        #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.projek {
+    margin: 100px auto 0;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    width: 100%; 
+    height: 100%;
+    position: relative; 
+    border-radius: 22px;
+}
+
+.projek-title {
+    font-size: 60px;
+    font-weight: 700;
+    color: #FFFBF5;
+    font-family: Lato, sans-serif;
+    padding: 10px 20px;
+}
+
+.projek-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Memposisikan elemen ke tengah secara horizontal */
+    margin-top: 20px; /* Jarak dari judul proyek ke konten proyek */
+    margin-bottom: 70px; /* Penambahan margin bawah antara judul proyek dan gambar */
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+}
+
+.projek-image {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.wrapper {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.content_projek {
+    overflow: visible;
+    width: 100%;
+}
+
+.images {
+    padding-top: 0vh;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr); /* Tiga kolom dengan lebar yang sama */
+    gap: 20px; /* Jarak antara kolom dan baris */
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    object-fit: cover;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+    .images {
+        grid-template-columns: repeat(2, 1fr); /* Dua kolom dengan lebar yang sama */
+    }
+}
+
+@media (max-width: 480px) {
+    .images {
+        grid-template-columns: 1fr; /* Satu kolom dengan lebar penuh */
+    }
+}
+
+.images img {
+    width: 100%; /* Lebar gambar menjadi 100% dari lebar grid item */
+    height: auto;
+    transition: transform 0.3s ease; /* animasi perubahan skala */
+}
+
+.images img:hover {
+    transform: scale(1.2); /* skala gambar menjadi 1.2 kali ukuran semula saat dihover */
+}
+
